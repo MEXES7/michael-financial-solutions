@@ -37,7 +37,7 @@ const Journey = () => {
               data-format="compact"
               data-suffix="+"
             >
-              0
+              3M+
             </span>
             <span className="journey-label">Active Users</span>
           </div>
@@ -55,7 +55,7 @@ const Journey = () => {
               </svg>
             </div>
             <span className="journey-number" data-target="2950">
-              0
+              2950
             </span>
             <span className="journey-label">Running Days</span>
           </div>
@@ -75,7 +75,7 @@ const Journey = () => {
               </svg>
             </div>
             <span className="journey-number" data-target="375">
-              0
+              375
             </span>
             <span className="journey-label">Won Award</span>
           </div>
@@ -94,7 +94,7 @@ const Journey = () => {
               </svg>
             </div>
             <span className="journey-number" data-target="200">
-              0
+              200
             </span>
             <span className="journey-label">Global Presence</span>
           </div>
