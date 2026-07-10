@@ -29,11 +29,7 @@ export default function LoginForm({ onSubmit }) {
         {/* Mobile Logo */}
         <div className="lg:hidden text-center mb-8">
           <Link href="/">
-            <img
-              src="https://owletdigitalbank.com/storage/app/public/photos/Lp57YcwJhSfQUjFI7uUyRtsxeRzMdPVUPJiibPDE.png"
-              alt="Logo"
-              className="h-12 mx-auto"
-            />
+            <img src="/logo.png" alt="Logo" className="h-12 mx-auto" />
           </Link>
         </div>
 

@@ -2,8 +2,9 @@ import React from "react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Owlet Digital | FAQs",
-  description: "Owlet Digital digital banking and financial services.",
+  title: "Michael Financial Solutions | FAQs",
+  description:
+    "Michael Financial Solutions digital banking and financial services.",
 };
 
 export default function FaqPage() {

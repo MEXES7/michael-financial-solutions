@@ -56,7 +56,7 @@ export default function VerifyEmail() {
                 <div className="circle"></div>
                 <div className="core"></div>
               </div>
-              <div className="text">Owlet Digital</div>
+              <div className="text">Michael Financial Solutions</div>
             </div>
           </div>
         </div>
