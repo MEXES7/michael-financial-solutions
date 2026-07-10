@@ -1,112 +1,13 @@
 "use client";
 
-// import Link from "next/link";
-// import Image from "next/image";
-// import { Menu, X } from "lucide-react";
-// import { useState } from "react";
-
-// export default function NavBar() {
-//   const [open, setOpen] = useState(false);
-
-//   const links = [
-//     {
-//       name: "Home",
-//       href: "#hero",
-//     },
-//     {
-//       name: "About",
-//       href: "#about",
-//     },
-//     {
-//       name: "Services",
-//       href: "#services",
-//     },
-//     {
-//       name: "FAQs",
-//       href: "#faq",
-//     },
-//     {
-//       name: "Contact",
-//       href: "/contact",
-//     },
-//   ];
-
-//   return (
-//     <header className="fixed top-0 left-0 z-50 w-full bg-[#003d82]/95 backdrop-blur">
-//       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-//         <Link href="/">
-//           <Image
-//             src="/logo.png"
-//             alt="Owlet Digital"
-//             width={170}
-//             height={55}
-//             priority
-//           />
-//         </Link>
-
-//         <nav className="hidden gap-8 lg:flex">
-//           {links.map((link) => (
-//             <a
-//               key={link.name}
-//               href={link.href}
-//               className="text-white transition hover:text-sky-400"
-//             >
-//               {link.name}
-//             </a>
-//           ))}
-//         </nav>
-
-//         <div className="hidden gap-3 lg:flex">
-//           <Link
-//             href="/register"
-//             className="rounded-lg bg-sky-500 px-5 py-3 text-white transition hover:bg-sky-600"
-//           >
-//             Open Account
-//           </Link>
-
-//           <Link
-//             href="/login"
-//             className="rounded-lg border border-white px-5 py-3 text-white transition hover:bg-white hover:text-[#003d82]"
-//           >
-//             Online Banking
-//           </Link>
-//         </div>
-
-//         <button onClick={() => setOpen(!open)} className="text-white lg:hidden">
-//           {open ? <X size={30} /> : <Menu size={30} />}
-//         </button>
-//       </div>
-
-//       {open && (
-//         <div className="space-y-4 bg-[#003d82] p-6 lg:hidden">
-//           {links.map((link) => (
-//             <a key={link.name} href={link.href} className="block text-white">
-//               {link.name}
-//             </a>
-//           ))}
-
-//           <Link
-//             href="/register"
-//             className="block rounded-lg bg-sky-500 px-5 py-3 text-center text-white"
-//           >
-//             Open Account
-//           </Link>
-
-//           <Link
-//             href="/login"
-//             className="block rounded-lg border border-white px-5 py-3 text-center text-white"
-//           >
-//             Online Banking
-//           </Link>
-//         </div>
-//       )}
-//     </header>
-//   );
-// }
-import React from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeMenu = () => setIsOpen(false);
+
   return (
     <header className="header" role="banner">
       <div className="container header-container">
@@ -121,50 +22,63 @@ const NavBar = () => {
         <button
           className="nav-toggle"
           aria-label="Toggle navigation"
-          aria-expanded="false"
+          aria-expanded={isOpen}
           aria-controls="main-nav"
+          onClick={() => setIsOpen((prev) => !prev)}
         >
           <span className="hamburger"></span>
         </button>
 
         <nav
-          className="main-nav"
+          className={`main-nav ${isOpen ? "active" : ""}`}
           id="main-nav"
           role="navigation"
           aria-label="Main navigation"
         >
           <ul className="nav-list">
             <li>
-              <Link href="/#hero" className="nav-link active">
+              <Link
+                href="/#hero"
+                className="nav-link active"
+                onClick={closeMenu}
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/#about" className="nav-link">
+              <Link href="/#about" className="nav-link" onClick={closeMenu}>
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/#services" className="nav-link">
+              <Link href="/#services" className="nav-link" onClick={closeMenu}>
                 Services
               </Link>
             </li>
             <li>
-              <Link href="/#faq" className="nav-link">
+              <Link href="/#faq" className="nav-link" onClick={closeMenu}>
                 FAQs
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="nav-link">
+              <Link href="/contact" className="nav-link" onClick={closeMenu}>
                 Contact
               </Link>
             </li>
           </ul>
           <div className="mobile-nav-ctas">
-            <Link href="/register" className="btn btn-primary btn-full">
+            <Link
+              href="/register"
+              className="btn btn-primary btn-full"
+              onClick={closeMenu}
+            >
               Open Account
             </Link>
-            <Link href="/login" className="btn btn-outline-white btn-full">
+            <Link
+              href="/login"
+              className="btn btn-outline-white btn-full"
+              onClick={closeMenu}
+            >
               Online Banking
             </Link>
           </div>
